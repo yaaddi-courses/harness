@@ -1,7 +1,7 @@
 term,definition,link,introduced_by_card_id
 CI/CD,"Short for Continuous Integration / Continuous Delivery: the practice of automatically building, testing, and shipping code every time someone changes it, instead of doing those steps by hand.",https://en.wikipedia.org/wiki/CI/CD,1
 modules,"In Harness, modules are separate purpose-built product areas — like CI, CD, or Feature Flags — that each focus on one job but share the same underlying pipeline engine.",,8
-pipeline,"A pipeline is the top-level workflow in Harness: the end-to-end sequence of stages that pulls your code, builds it, tests it, and deploys it.",,15
+pipeline,"A pipeline is the top-level workflow in Harness: the end-to-end sequence of stages that pulls your code, builds it, tests it, and deploys it.",,13
 stage,A stage is one phase of a pipeline (like 'build' or 'deploy') that groups together a set of related steps that run in order.,,22
 step,"A step is the smallest unit of work in a Harness pipeline — one specific action, like running a script or a single test.",,22
 Delegate,"The Delegate is a lightweight worker process you run inside your own network — e.g. installed as a pod in your Kubernetes cluster. It's how cloud-hosted Harness reaches your private servers, clusters, and clouds to actually carry out pipeline tasks.",,29
@@ -46,6 +46,6 @@ execution view,"The execution view is the real-time screen in Harness where you 
 SaaS,"SaaS, short for Software as a Service, means the software runs on the provider's own servers and you access it over the internet, instead of installing and hosting it yourself.",https://en.wikipedia.org/wiki/Software_as_a_service,30
 YAML,"YAML is a plain-text file format, using indentation instead of brackets, that's commonly used to write configuration — Harness pipelines are ultimately stored as YAML.",https://en.wikipedia.org/wiki/YAML,135
 Kubernetes,"Kubernetes is a system for automatically running, scaling, and managing containerized applications across a group of machines, instead of managing each container by hand.",https://kubernetes.io/,29
-cluster,"A cluster is a group of machines that work together as one system — in Kubernetes, it's the whole set of servers your containers actually run on.",,107
+cluster,"A cluster is a group of machines that work together as one system — in Kubernetes, it's the whole set of servers your containers actually run on.",,95
 pod,A pod is the smallest deployable unit in Kubernetes — one running instance of your containerized application (or a small group of tightly coupled containers) inside a cluster.,,184
 health check,A health check is an automated probe that repeatedly asks 'is this still working correctly?' after a deploy — e.g. pinging a '/health' URL every few seconds and expecting a success response — and can trigger an automatic rollback if the answer becomes no.,,121
