@@ -9,44 +9,44 @@ id,unit_id,type,role,related_main_id,prompt,options,correct_index,image,audio,ex
 8,2,multiple_choice,main,,Harness organizes functionality into:,Modules|One monolith|Plugins only,0,,,
 9,2,select_blank,preview,8,Harness splits features into ___.,modules|one file|nothing,0,,,"CI, CD, Feature Flags, Security Testing, and more each get their own module."
 10,2,true_false,exercise,8,CI and CD are separate Harness modules.,,true,,,"Each is purpose-built, sharing common pipeline components."
-11,2,multiple_choice,exercise,8,Feature Flags is a Harness:,Module|Programming language|Database,0,,,
-12,2,multi_select,exercise,8,Which are real Harness modules?,CI|CD|Feature Flags|Word processor,0|1|2,,,
-13,2,select_blank,exercise,8,Modules share common ___ components.,pipeline|database|network,0,,,
-14,2,multiple_choice,exercise,8,Modules in Harness are:,Purpose-built|All identical|Unrelated tools,0,,,
-15,3,multiple_choice,main,,A Harness pipeline represents a:,Workflow|Single command|Database table,0,,,
+11,2,multiple_choice,exercise,8,Feature Flags is a Harness:,Module|Programming language|Database,0,,,"A module is one of the specific, reusable components designed to perform a function within the pipeline. It's not a programming language or just a database structure itself."
+12,2,multi_select,exercise,8,Which are real Harness modules?,CI|CD|Feature Flags|Word processor,0|1|2,,,"Harness provides dedicated modules for Continuous Integration (CI), Continuous Delivery (CD), and managing feature toggles. A word processor is unrelated to software deployment workflows."
+13,2,select_blank,exercise,8,Modules share common ___ components.,pipeline|database|network,0,,,"All modules are designed to be integrated and executed within a structured workflow, which is what defines the pipeline. While they use databases or networks, their common structural element is the pipeline definition itself."
+14,2,multiple_choice,exercise,8,Modules in Harness are:,Purpose-built|All identical|Unrelated tools,0,,,"Each module is designed with a specific, intended purpose—for example, one for testing or another for deployment. They are not generic, identical tools, nor are they simply unrelated utilities."
+15,3,multiple_choice,main,,A Harness pipeline represents a:,Workflow|Single command|Database table,0,,,"The pipeline represents the entire sequence or workflow that defines how code moves from commit to production. It is a structured process, far exceeding the scope of a single command or simple database table."
 16,3,multiple_choice,preview,15,A pipeline is best described as a:,Full workflow|Single click|Random file,0,,,"It's an end-to-end workflow -- build, test, deploy -- made of stages."
 17,3,true_false,exercise,15,A pipeline can span build and deploy.,,true,,,Pipelines cover the whole delivery workflow.
-18,3,multiple_choice,exercise,15,Pipelines are made up of:,Stages|Random scripts|Nothing,0,,,
-19,3,select_blank,exercise,15,A pipeline is Harness's ___ concept.,central|smallest|optional,0,,,
-20,3,multiple_choice,exercise,15,Pipelines can be triggered:,Automatable|Manual only|Never,0,,,
+18,3,multiple_choice,exercise,15,Pipelines are made up of:,Stages|Random scripts|Nothing,0,,,"Pipelines define the overall workflow by grouping related actions into distinct stages. Stages are the structural components that manage the flow of execution, while scripts are simply code executed within those defined stages."
+19,3,select_blank,exercise,15,A pipeline is Harness's ___ concept.,central|smallest|optional,0,,,The pipeline is considered Harness's central concept because it acts as the main blueprint defining the entire sequence and structure of your deployment process. It dictates how all other elements interact.
+20,3,multiple_choice,exercise,15,Pipelines can be triggered:,Automatable|Manual only|Never,0,,,"Pipelines are designed to be automated, meaning they can trigger automatically based on events like code commits or scheduled times. While you can manually start a run, their primary power lies in automation."
 21,3,true_false,exercise,15,Every Harness module uses pipelines.,,true,,,"CI, CD, and other modules build on the same concept."
-22,4,multiple_choice,main,,A stage is made up of:,Steps|Pipelines|Connectors,0,,,
+22,4,multiple_choice,main,,A stage is made up of:,Steps|Pipelines|Connectors,0,,,"A stage is essentially a container that groups related actions together, and those individual actions are called steps. Therefore, stages are composed of multiple steps to manage a logical phase of the deployment."
 23,4,true_false,preview,22,A stage contains individual steps.,,true,,,Each stage groups related steps like running a script or test.
 24,4,true_false,exercise,22,A pipeline can have multiple stages.,,true,,,Common pattern: a build stage then a deploy stage.
-25,4,multiple_choice,exercise,22,Running a single script is a:,Step|Stage|Pipeline,0,,,
-26,4,order,exercise,22,Order these from largest to smallest.,Pipeline|Stage|Step,,,,
-27,4,select_blank,exercise,22,Stages group related ___ together.,steps|pipelines|accounts,0,,,
-28,4,multiple_choice,exercise,22,A build-then-test-then-deploy flow uses:,Multiple stages|One step|No structure,0,,,
-29,5,multiple_choice,main,,The Delegate runs inside:,Your network|Harness servers|Nowhere,0,,,
+25,4,multiple_choice,exercise,22,Running a single script is a:,Step|Stage|Pipeline,0,,,The step is the smallest unit of work; it represents the actual execution of a single script or command within your workflow. Stages simply group these fundamental steps together for organizational purposes.
+26,4,order,exercise,22,Order these from largest to smallest.,Pipeline|Stage|Step,,,,"The hierarchy goes from largest to smallest: a Pipeline is the entire workflow, which contains multiple Stages, and each Stage is composed of individual Steps."
+27,4,select_blank,exercise,22,Stages group related ___ together.,steps|pipelines|accounts,0,,,"Stages are organizational containers that group related steps together, ensuring your overall pipeline remains logical and easy to follow."
+28,4,multiple_choice,exercise,22,A build-then-test-then-deploy flow uses:,Multiple stages|One step|No structure,0,,,"Because building, testing, and deploying represent three distinct, sequential phases of work, they must each be defined as their own stage for proper execution flow."
+29,5,multiple_choice,main,,The Delegate runs inside:,Your network|Harness servers|Nowhere,0,,,"The delegate is designed to run inside your network environment, which gives it secure access to all the internal resources and systems you need to connect to."
 30,5,true_false,preview,29,The Delegate runs in your own network.,,true,,,It bridges Harness SaaS and infrastructure behind your firewall.
 31,5,true_false,exercise,29,The Delegate lets Harness reach private infra.,,true,,,It bridges Harness SaaS and infrastructure behind your firewall.
-32,5,multiple_choice,exercise,29,Pipeline tasks are actually executed by the:,Delegate|Browser|Connector,0,,,
-33,5,select_blank,exercise,29,The Delegate is a ___ you run yourself.,process|webpage|database,0,,,
-34,5,multiple_choice,exercise,29,"Without a reachable Delegate, a pipeline:",Tasks fail|Runs faster|Skips steps,0,,,
+32,5,multiple_choice,exercise,29,Pipeline tasks are actually executed by the:,Delegate|Browser|Connector,0,,,The delegate acts as the dedicated runtime engine that actually executes the code and logic defined within every task in your pipeline.
+33,5,select_blank,exercise,29,The Delegate is a ___ you run yourself.,process|webpage|database,0,,,"A Delegate operates as its own dedicated background process that handles specific tasks for your pipeline, making it more robust than simply being a webpage or database connection."
+34,5,multiple_choice,exercise,29,"Without a reachable Delegate, a pipeline:",Tasks fail|Runs faster|Skips steps,0,,,Any tasks that depend on an external Delegate will fail because the pipeline cannot communicate with the required service. The system won't automatically skip steps just because one resource is unavailable.
 35,5,true_false,exercise,29,A Delegate can run inside Kubernetes.,,true,,,It's commonly deployed as a pod in a cluster.
-36,6,multiple_choice,main,,Delegate selectors route tasks by:,Tag|Random luck|Color,0,,,
+36,6,multiple_choice,main,,Delegate selectors route tasks by:,Tag|Random luck|Color,0,,,"Delegates use tags as a mechanism to categorize and route tasks, ensuring that only the appropriate service picks up the job. This reliable method replaces guesswork like random luck or visual cues."
 37,6,select_blank,preview,36,A selector routes tasks by ___.,tag|color|price,0,,,Selectors are tags that route work to the right Delegate.
 38,6,true_false,exercise,36,Different Delegates can reach different clouds.,,true,,,Selectors let you target the right one per task.
-39,6,multiple_choice,exercise,36,Selectors are useful when you have:,Multiple Delegates|One Delegate|No Delegates,0,,,
-40,6,select_blank,exercise,36,A selector is a ___ on a Delegate.,tag|password|port,0,,,
-41,6,multiple_choice,exercise,36,"Without the right selector, a task might:",Wrong network|Run instantly|Skip entirely,0,,,
+39,6,multiple_choice,exercise,36,Selectors are useful when you have:,Multiple Delegates|One Delegate|No Delegates,0,,,"You need selectors when you have multiple delegates because they allow you to direct specific tasks to the correct service instance. If you only had one delegate, routing wouldn't be necessary."
+40,6,select_blank,exercise,36,A selector is a ___ on a Delegate.,tag|password|port,0,,,"A selector functions as a specific tag that labels what kind of work a particular Delegate is capable of handling. It tells the pipeline which service should pick up the task, unlike a password or port number."
+41,6,multiple_choice,exercise,36,"Without the right selector, a task might:",Wrong network|Run instantly|Skip entirely,0,,,"A selector tells the system exactly what resource to interact with; if it's wrong, the task won't find its intended target and will therefore connect to the wrong network or environment."
 42,6,true_false,exercise,36,Selectors are optional if you only have one Delegate.,,true,,,Routing matters most with several Delegates.
-43,7,multiple_choice,main,,A GitHub connector stores:,"Auth, settings|Nothing useful|Pipeline logic",0,,,
+43,7,multiple_choice,main,,A GitHub connector stores:,"Auth, settings|Nothing useful|Pipeline logic",0,,,The connector is designed to securely handle your authentication details and connection settings so that Harness can talk to GitHub without needing those secrets stored in the pipeline definition.
 44,7,multiple_choice,preview,43,A connector stores login info for a:,Third-party tool|Random file|Nothing,0,,,"Like GitHub, Docker Hub, or a cloud provider -- auth and settings live here."
 45,7,true_false,exercise,43,Connectors are reused across many pipelines.,,true,,,"Define once, reference from any pipeline that needs it."
-46,7,multiple_choice,exercise,43,A connector links Harness to a:,Third-party tool|Random file|Nothing,0,,,
-47,7,select_blank,exercise,43,Connectors avoid hardcoding ___ in pipelines.,credentials|stage names|pipeline IDs,0,,,
-48,7,multiple_choice,exercise,43,A Docker registry connector is used to:,Push/pull images|Run tests|Send email,0,,,
+46,7,multiple_choice,exercise,43,A connector links Harness to a:,Third-party tool|Random file|Nothing,0,,,"At its core, a connector is simply the mechanism that allows Harness to communicate and execute tasks within an external or third-party system."
+47,7,select_blank,exercise,43,Connectors avoid hardcoding ___ in pipelines.,credentials|stage names|pipeline IDs,0,,,"By using a connector, you keep sensitive information like API keys and passwords out of your source code, which prevents accidental exposure if the pipeline definition were ever viewed."
+48,7,multiple_choice,exercise,43,A Docker registry connector is used to:,Push/pull images|Run tests|Send email,0,,,"A Docker registry connector manages the lifecycle of your containers, allowing the pipeline to securely pull base images or push newly built ones after deployment."
 49,7,true_false,exercise,43,Every pipeline needs its own separate connector.,,false,,,Connectors are reusable across pipelines.
 50,8,multiple_choice,main,,"Secrets should be referenced, never:",Hardcoded|Encrypted|Named,0,,,
 51,8,true_false,preview,50,"Secrets should be referenced, never hardcoded.",,true,,,They're stored encrypted and referenced by name in pipelines.
@@ -58,148 +58,148 @@ id,unit_id,type,role,related_main_id,prompt,options,correct_index,image,audio,ex
 57,9,multiple_choice,main,,A basic CI pipeline builds an:,Artifact|Invoice|Database schema,0,,,
 58,9,select_blank,preview,57,A CI pipeline uploads a built ___.,artifact|invoice|meeting,0,,,"It pulls the code, builds an artifact, tests it, then uploads it to a registry."
 59,9,true_false,exercise,57,A CI pipeline typically includes testing.,,true,,,Build-then-test is the standard CI shape.
-60,9,multiple_choice,exercise,57,A built artifact is usually uploaded to a:,Registry|Text file|Nowhere,0,,,
-61,9,order,exercise,57,Order a typical CI flow.,Pull code|Build|Test|Upload artifact,,,,
-62,9,select_blank,exercise,57,CI pipelines start by pulling the ___.,codebase|database|secrets,0,,,
-63,9,multiple_choice,exercise,57,Skipping tests in a CI pipeline is:,Risky|Best practice|Required,0,,,
-64,10,multiple_choice,main,,Harness CI Cloud runs builds on:,Managed VMs|Your laptop|Nothing,0,,,
+60,9,multiple_choice,exercise,57,A built artifact is usually uploaded to a:,Registry|Text file|Nowhere,0,,,"Built artifacts are compiled, ready-to-run packages that need to be stored and versioned in a dedicated container registry. A text file is just source code or logs, not the final deployable product."
+61,9,order,exercise,57,Order a typical CI flow.,Pull code|Build|Test|Upload artifact,,,,"The typical flow starts with pulling the code, then compiling it (Build), verifying its functionality (Test), and finally making the resulting package available for deployment (Upload artifact)."
+62,9,select_blank,exercise,57,CI pipelines start by pulling the ___.,codebase|database|secrets,0,,,CI pipelines are triggered by connecting to a source control system to pull the latest version of your codebase. Databases or secrets aren't pulled in this initial step.
+63,9,multiple_choice,exercise,57,Skipping tests in a CI pipeline is:,Risky|Best practice|Required,0,,,"Skipping tests is highly risky because it means you are deploying code without verifying that it actually works, which can introduce bugs into production."
+64,10,multiple_choice,main,,Harness CI Cloud runs builds on:,Managed VMs|Your laptop|Nothing,0,,,Harness CI Cloud provides a fully managed environment using its own cloud infrastructure (Managed VMs) so you don't have to worry about setting up the build machines yourself.
 65,10,true_false,preview,64,Harness CI Cloud runs on managed VMs.,,true,,,Self-hosted builds instead run on your own infra via a Delegate.
 66,10,true_false,exercise,64,Self-hosted builds run through a Delegate.,,true,,,The Delegate executes builds on your own infra.
-67,10,multiple_choice,exercise,64,A benefit of Cloud build infra is:,No maintenance|Full control|Zero cost,0,,,
-68,10,select_blank,exercise,64,Self-hosted builds run on your own ___.,infrastructure|browser|phone,0,,,
-69,10,multiple_choice,exercise,64,Choosing self-hosted often means needing:,More control|No Delegate|Nothing extra,0,,,
+67,10,multiple_choice,exercise,64,A benefit of Cloud build infra is:,No maintenance|Full control|Zero cost,0,,,"Cloud providers handle all the underlying hardware maintenance and patching for you, which is the biggest benefit. While cloud services are powerful, they do involve costs, so 'zero cost' isn't accurate."
+68,10,select_blank,exercise,64,Self-hosted builds run on your own ___.,infrastructure|browser|phone,0,,,"Self-hosted builds require you to set up and manage your own dedicated hardware or computing environment, which is the infrastructure. They cannot run within a web browser or on a mobile phone."
+69,10,multiple_choice,exercise,64,Choosing self-hosted often means needing:,More control|No Delegate|Nothing extra,0,,,"Since you are managing every piece of the physical build machine, self-hosting gives you maximum control over the entire process and environment. This level of customization is powerful but requires more effort than using a managed cloud service."
 70,10,true_false,exercise,64,Cloud build VMs are preconfigured with common tools.,,true,,,This saves setup time for common languages/tools.
-71,11,multiple_choice,main,,A trigger decides:,When it runs|What builds|Who logs,0,,,
+71,11,multiple_choice,main,,A trigger decides:,When it runs|What builds|Who logs,0,,,"The trigger mechanism determines the specific event or timing that initiates the pipeline, telling it *when* to start running. It doesn't dictate the build steps themselves or who is allowed to view logs."
 72,11,multiple_choice,preview,71,A trigger decides when a pipeline:,Runs|Waits|Deletes,0,,,"A push, a PR, a schedule, or a manual click can all trigger a run."
 73,11,true_false,exercise,71,A trigger can fire on a Git push.,,true,,,Git events are a common trigger source.
-74,11,multiple_choice,exercise,71,Running a pipeline on a schedule uses a:,Cron trigger|Manual click|Nothing,0,,,
-75,11,select_blank,exercise,71,Codebase config points a pipeline at a ___.,repo|server|secret,0,,,
-76,11,multiple_choice,exercise,71,A pull-request trigger commonly runs:,Pre-merge checks|Nothing useful|Post-merge,0,,,
+74,11,multiple_choice,exercise,71,Running a pipeline on a schedule uses a:,Cron trigger|Manual click|Nothing,0,,,"A cron trigger uses a standardized syntax to define recurring, time-based schedules, allowing you to run pipelines automatically at set intervals. This is the technical method for scheduling, unlike a manual click."
+75,11,select_blank,exercise,71,Codebase config points a pipeline at a ___.,repo|server|secret,0,,,"The codebase configuration needs to point the pipeline directly at the source code repository where all the changes live. You wouldn't point it at a server or a secret, as those are just resources, not the actual code."
+76,11,multiple_choice,exercise,71,A pull-request trigger commonly runs:,Pre-merge checks|Nothing useful|Post-merge,0,,,Pull request triggers are designed specifically to run automated tests and checks before the code is allowed into the main branch. Running them post-merge defeats the purpose of catching issues early.
 77,11,true_false,exercise,71,A pipeline can only ever run manually.,,false,,,Triggers automate runs on events or schedules.
-78,12,multiple_choice,main,,Test Intelligence speeds up builds by:,Fewer tests|No tests|More tests,0,,,
+78,12,multiple_choice,main,,Test Intelligence speeds up builds by:,Fewer tests|No tests|More tests,0,,,"It accelerates builds by intelligently running only a subset of the most relevant tests, rather than executing every single test case every time. Running more tests would slow down the build, defeating the purpose entirely."
 79,12,true_false,preview,78,Test Intelligence only runs affected tests.,,true,,,It maps changed files to the tests that actually cover them.
 80,12,true_false,exercise,78,Test Intelligence picks tests affected by the change.,,true,,,It maps code changes to relevant tests automatically.
-81,12,multiple_choice,exercise,78,The main goal of Test Intelligence is:,Faster feedback|More flakiness|Slower CI,0,,,
-82,12,select_blank,exercise,78,Test Intelligence avoids running ___ every test.,always|never|only,0,,,
-83,12,multiple_choice,exercise,78,Test Intelligence relies on knowing:,Code-to-test mapping|Nothing useful|Random luck,0,,,
+81,12,multiple_choice,exercise,78,The main goal of Test Intelligence is:,Faster feedback|More flakiness|Slower CI,0,,,"Its core function is to provide rapid feedback, letting developers know almost instantly if their code introduced regressions. Slower CI or increased flakiness are the exact problems it aims to solve."
+82,12,select_blank,exercise,78,Test Intelligence avoids running ___ every test.,always|never|only,0,,,"Test Intelligence is designed to avoid running every single test case unconditionally on every commit. Instead, it intelligently determines the minimal set of tests required for validation based on code changes."
+83,12,multiple_choice,exercise,78,Test Intelligence relies on knowing:,Code-to-test mapping|Nothing useful|Random luck,0,,,Test Intelligence needs to know which specific parts of your code relate to certain tests; this mapping allows it to run only the necessary checks instead of everything.
 84,12,true_false,exercise,78,Test Intelligence removes the need for testing.,,false,,,"It runs relevant tests smarter, not zero tests."
-85,13,multiple_choice,main,,Cache Intelligence speeds up builds by:,Reusing caches|Deleting files|Ignoring dependencies,0,,,
+85,13,multiple_choice,main,,Cache Intelligence speeds up builds by:,Reusing caches|Deleting files|Ignoring dependencies,0,,,"It significantly boosts build speed by storing and reusing the results of previous steps, meaning you don't have to re-run time-consuming processes like compiling from scratch."
 86,13,select_blank,preview,85,Cache Intelligence reuses ___ between builds.,caches|passwords|nothing,0,,,It caches dependencies and build layers so repeat builds skip redundant work.
 87,13,true_false,exercise,85,Caching avoids redundant dependency downloads.,,true,,,A cached dependency doesn't need re-fetching each run.
-88,13,multiple_choice,exercise,85,Cache Intelligence mainly targets:,"Deps, layers|Test results|Secrets",0,,,
-89,13,select_blank,exercise,85,Reusing a cache skips redundant ___ work.,download|testing|deploy,0,,,
-90,13,multiple_choice,exercise,85,"Without caching, every build tends to be:",Slower|Faster|Identical speed,0,,,
+88,13,multiple_choice,exercise,85,Cache Intelligence mainly targets:,"Deps, layers|Test results|Secrets",0,,,Cache Intelligence primarily targets dependencies and build layers because these are the foundational components that define how your project is structured and built.
+89,13,select_blank,exercise,85,Reusing a cache skips redundant ___ work.,download|testing|deploy,0,,,"By reusing a cache, you skip having to re-download large assets or external dependencies that haven't changed since your last successful build."
+90,13,multiple_choice,exercise,85,"Without caching, every build tends to be:",Slower|Faster|Identical speed,0,,,"Without caching, the system must execute every single step and fetch all necessary resources from scratch, which inevitably makes the entire process much slower."
 91,13,true_false,exercise,85,Cache Intelligence works automatically once enabled.,,true,,,It requires little manual cache management.
-92,14,multiple_choice,main,,A Service in Harness CD defines the:,What deploys|Deploy target|Deploy timing,0,,,
+92,14,multiple_choice,main,,A Service in Harness CD defines the:,What deploys|Deploy target|Deploy timing,0,,,"The Service component defines the payload—it specifies *what* application or artifact needs to be deployed. It is concerned with the content itself, not where it goes or when the deployment happens."
 93,14,true_false,preview,92,A Service defines what gets deployed.,,true,,,"Environment defines where, and Infrastructure Definition defines the exact target."
 94,14,true_false,exercise,92,An Environment can represent staging or prod.,,true,,,Environments group deploy targets logically.
-95,14,multiple_choice,exercise,92,An Infrastructure Definition specifies the:,Target cluster/VM|App version|Test suite,0,,,
-96,14,match_pairs,exercise,92,Match CD concept to its role.,Service↔what|Environment↔where|Infra Definition↔exact target,,,,
-97,14,select_blank,exercise,92,Environments separate staging from ___.,production|the codebase|the Delegate,0,,,
-98,14,multiple_choice,exercise,92,Reusing one Service across environments is:,Common|Forbidden|Impossible,0,,,
-99,15,multiple_choice,main,,Testing a new version on some traffic is:,Canary|Rolling|Blue-green,0,,,
+95,14,multiple_choice,exercise,92,An Infrastructure Definition specifies the:,Target cluster/VM|App version|Test suite,0,,,"An Infrastructure Definition tells Harness *where* the application will run by specifying the exact compute resource, such as a Kubernetes cluster or VM. This defines the target location, not the code version or test suite."
+96,14,match_pairs,exercise,92,Match CD concept to its role.,Service↔what|Environment↔where|Infra Definition↔exact target,,,,"Services define *what* is deployed, Environments specify *where* it should run in your lifecycle, and Infrastructure Definitions pinpoint the exact physical or logical deployment *target*."
+97,14,select_blank,exercise,92,Environments separate staging from ___.,production|the codebase|the Delegate,0,,,"Environments are used to logically isolate different stages of an application's journey, most importantly separating testing/staging from the live Production environment. The codebase and Delegate are concepts that exist outside this separation."
+98,14,multiple_choice,exercise,92,Reusing one Service across environments is:,Common|Forbidden|Impossible,0,,,"It is very common practice to define a single Service component for an application artifact, which can then be reused across multiple different environments like staging and production."
+99,15,multiple_choice,main,,Testing a new version on some traffic is:,Canary|Rolling|Blue-green,0,,,"Canary deployments involve releasing the new version to a small subset of users or servers first, allowing you to test it on real traffic before a full rollout."
 100,15,multiple_choice,preview,99,A canary release sends new code to:,Some traffic|All traffic|No traffic,0,,,Rolling replaces instances gradually; blue-green switches all traffic at once.
 101,15,true_false,exercise,99,Blue-green keeps two full environments running.,,true,,,"Old (blue) and new (green), switching traffic between them."
-102,15,multiple_choice,exercise,99,Gradually replacing instances one by one is:,Rolling|Canary|Blue-green,0,,,
-103,15,match_pairs,exercise,99,Match strategy to its approach.,Rolling↔gradual replace|Canary↔small slice first|Blue-green↔instant switch,,,,
-104,15,select_blank,exercise,99,Canary deploys reduce ___ from a bad release.,risk|speed|cost,0,,,
-105,15,multiple_choice,exercise,99,Blue-green's main cost is:,Two environments|No cost|Slower rollback,0,,,
-106,16,multiple_choice,main,,"In GitOps, the source of truth is:",Git|Manual click|A spreadsheet,0,,,
+102,15,multiple_choice,exercise,99,Gradually replacing instances one by one is:,Rolling|Canary|Blue-green,0,,,"Rolling updates replace instances gradually over time; this is different from Blue-green, which involves running two complete environments simultaneously."
+103,15,match_pairs,exercise,99,Match strategy to its approach.,Rolling↔gradual replace|Canary↔small slice first|Blue-green↔instant switch,,,,"The correct matches are: Rolling↔gradual replace, Canary↔small slice first, and Blue-green↔instant switch."
+104,15,select_blank,exercise,99,Canary deploys reduce ___ from a bad release.,risk|speed|cost,0,,,"By limiting the initial release to a small group of users, canary deployments significantly reduce the overall risk if something goes wrong with the new code."
+105,15,multiple_choice,exercise,99,Blue-green's main cost is:,Two environments|No cost|Slower rollback,0,,,"Because you must maintain two identical environments (the old and the new) during the deployment process, Blue-green's primary cost is having to run both simultaneously."
+106,16,multiple_choice,main,,"In GitOps, the source of truth is:",Git|Manual click|A spreadsheet,0,,,"Git must be the source of truth because it provides a version-controlled, auditable record of the desired state for your entire system. Manual clicks or spreadsheets are temporary deviations that don't guarantee consistency."
 107,16,true_false,preview,106,"In GitOps, Git is the source of truth.",,true,,,An agent continuously reconciles the live cluster to match the repo.
 108,16,true_false,exercise,106,A GitOps agent continuously reconciles cluster state.,,true,,,It keeps the live cluster matching the repo's declared state.
-109,16,multiple_choice,exercise,106,Changing a deploy in GitOps means:,Git commit|Button click|Cluster edit,0,,,
-110,16,select_blank,exercise,106,GitOps continuously ___ the live state to match Git.,reconciles|ignores|deletes,0,,,
-111,16,multiple_choice,exercise,106,A benefit of GitOps is:,Full audit|No audit|Manual-only changes,0,,,
+109,16,multiple_choice,exercise,106,Changing a deploy in GitOps means:,Git commit|Button click|Cluster edit,0,,,"In GitOps, all changes must be initiated by a Git commit because this ensures that every deployment is tracked and reversible via version control. Direct button clicks or cluster edits bypass this crucial audit trail."
+110,16,select_blank,exercise,106,GitOps continuously ___ the live state to match Git.,reconciles|ignores|deletes,0,,,"The system continuously reconciles the live state to match Git by constantly comparing what *is* running with what *should* be running, automatically correcting any drift."
+111,16,multiple_choice,exercise,106,A benefit of GitOps is:,Full audit|No audit|Manual-only changes,0,,,"A major benefit is full auditability because every change must pass through a commit in Git. This provides a complete, verifiable history that manual changes cannot offer."
 112,16,true_false,exercise,106,GitOps requires manually SSHing into servers.,,false,,,The agent applies changes automatically from Git.
-113,17,multiple_choice,main,,An approval pauses a pipeline for a:,Human decision|Random delay|Nothing,0,,,
+113,17,multiple_choice,main,,An approval pauses a pipeline for a:,Human decision|Random delay|Nothing,0,,,Approvals are mandatory gates designed to pause the automated pipeline until an authorized human explicitly reviews and signs off on the proposed changes before they can be applied.
 114,17,select_blank,preview,113,An approval pauses a pipeline for a ___.,human decision|random delay|nothing,0,,,It waits for a designated person or group to approve before continuing.
 115,17,true_false,exercise,113,An approval can require a specific group.,,true,,,Approvals can be scoped to particular approvers.
-116,17,multiple_choice,exercise,113,Approval gates are common before deploying to:,Production|A sandbox|Nowhere,0,,,
-117,17,select_blank,exercise,113,An approval waits for a ___ decision.,human|random|automatic,0,,,
-118,17,multiple_choice,exercise,113,Skipping approval gates in prod pipelines is:,Risky|Always required|Impossible,0,,,
+116,17,multiple_choice,exercise,113,Approval gates are common before deploying to:,Production|A sandbox|Nowhere,0,,,"Approval gates are critical before deploying to Production because that environment affects real users and requires human sign-off. Sandboxes are only for testing, not live deployment."
+117,17,select_blank,exercise,113,An approval waits for a ___ decision.,human|random|automatic,0,,,"By definition, an approval gate waits for a manual decision from a person; it cannot be random or automatically triggered."
+118,17,multiple_choice,exercise,113,Skipping approval gates in prod pipelines is:,Risky|Always required|Impossible,0,,,Skipping approvals in production is highly risky because you bypass necessary quality checks and human judgment designed to protect the live system.
 119,17,true_false,exercise,113,An approval can time out if unanswered.,,true,,,A configurable timeout prevents pipelines hanging forever.
-120,18,multiple_choice,main,,A rollback reverts to the:,Prior state|Newest version|Random state,0,,,
+120,18,multiple_choice,main,,A rollback reverts to the:,Prior state|Newest version|Random state,0,,,"A rollback always restores the entire application to the last known good or prior stable state, rather than just reverting to whatever was built most recently."
 121,18,true_false,preview,120,A rollback reverts to a prior state.,,true,,,It can trigger manually or automatically when a health check fails.
 122,18,true_false,exercise,120,A failed health check can auto-trigger rollback.,,true,,,Automatic rollback is a common safety mechanism.
-123,18,multiple_choice,exercise,120,Rollback is mainly a safety net for:,Bad releases|Slow builds|Test failures,0,,,
-124,18,select_blank,exercise,120,A rollback reverts to the last ___ version.,known-good|newest|random,0,,,
-125,18,multiple_choice,exercise,120,Manual rollback is triggered by a:,Person|A schedule|Nothing,0,,,
+123,18,multiple_choice,exercise,120,Rollback is mainly a safety net for:,Bad releases|Slow builds|Test failures,0,,,Rollback is designed specifically as a safety net for bad releases—meaning code that has already been deployed and introduced errors into the live system.
+124,18,select_blank,exercise,120,A rollback reverts to the last ___ version.,known-good|newest|random,0,,,"A rollback always reverts to the last known-good version because that is the most stable state we can guarantee, unlike just picking a random or newest build."
+125,18,multiple_choice,exercise,120,Manual rollback is triggered by a:,Person|A schedule|Nothing,0,,,"Since manual rollbacks are initiated by human intervention due to an unexpected issue, a person must trigger it. A schedule would only handle automated processes."
 126,18,true_false,exercise,120,Rollback is only possible for blue-green deploys.,,false,,,Most deployment strategies support some rollback path.
-127,19,multiple_choice,main,,Continuous Verification watches metrics during a:,Deploy|Code review|Meeting,0,,,
+127,19,multiple_choice,main,,Continuous Verification watches metrics during a:,Deploy|Code review|Meeting,0,,,Continuous Verification is designed to monitor metrics and system health specifically while code is being deployed into production or staging environments.
 128,19,true_false,preview,127,Continuous Verification compares new metrics to a baseline.,,true,,,It watches live metrics/logs during a deploy to auto-detect a regression.
 129,19,true_false,exercise,127,Continuous Verification compares against a baseline.,,true,,,New version behavior is compared to known-good baseline.
-130,19,multiple_choice,exercise,127,A goal of Continuous Verification is:,Early detection|No monitoring|Slower deploys,0,,,
-131,19,select_blank,exercise,127,Continuous Verification can trigger an automatic ___.,rollback|approval|commit,0,,,
-132,19,multiple_choice,exercise,127,Continuous Verification analyzes:,"Metrics, logs|Code diffs|Nothing live",0,,,
+130,19,multiple_choice,exercise,127,A goal of Continuous Verification is:,Early detection|No monitoring|Slower deploys,0,,,"The primary goal of Continuous Verification is to catch issues as early as possible in the pipeline, which prevents them from reaching users."
+131,19,select_blank,exercise,127,Continuous Verification can trigger an automatic ___.,rollback|approval|commit,0,,,"If verification detects a critical failure during deployment, it should automatically trigger a rollback to prevent system instability."
+132,19,multiple_choice,exercise,127,Continuous Verification analyzes:,"Metrics, logs|Code diffs|Nothing live",0,,,"Continuous Verification analyzes operational data like metrics and logs to ensure everything is behaving as expected in real time. It's about checking performance and usage patterns, not just reviewing the raw code changes."
 133,19,true_false,exercise,127,Continuous Verification requires zero live traffic data.,,false,,,It relies on real metrics/logs from the live rollout.
-134,20,multiple_choice,main,,A template's main purpose is:,Reuse|Deletion|Encryption,0,,,
+134,20,multiple_choice,main,,A template's main purpose is:,Reuse|Deletion|Encryption,0,,,"Templates exist primarily for reuse, allowing you to define a standard block of configuration that can be plugged into multiple different projects. This saves time and ensures consistency across your setups."
 135,20,select_blank,preview,134,Templates exist to avoid duplicate ___.,YAML|servers|secrets,0,,,A template captures config once so many pipelines can reuse it.
 136,20,true_false,exercise,134,A template can be a whole pipeline.,,true,,,"Templates exist at step, stage, and pipeline level."
-137,20,multiple_choice,exercise,134,"Without templates, teams often end up with:",Duplicated YAML|Less YAML|No pipelines,0,,,
-138,20,select_blank,exercise,134,Templates keep pipelines ___ across projects.,consistent|unrelated|random,0,,,
-139,20,multiple_choice,exercise,134,Updating a shared template affects:,All users|Nothing else|Only itself,0,,,
+137,20,multiple_choice,exercise,134,"Without templates, teams often end up with:",Duplicated YAML|Less YAML|No pipelines,0,,,"Without templates, teams tend to copy and paste the same configurations repeatedly, leading to massive amounts of duplicated and hard-to-maintain YAML code."
+138,20,select_blank,exercise,134,Templates keep pipelines ___ across projects.,consistent|unrelated|random,0,,,"By using a shared template, you guarantee that the core structure and steps of your pipeline remain consistent no matter which project it is applied to. This standardization makes maintenance much easier."
+139,20,multiple_choice,exercise,134,Updating a shared template affects:,All users|Nothing else|Only itself,0,,,"Because the template is shared, any update you make to it immediately propagates and affects every single project that relies on that specific template. Changes are global!"
 140,20,true_false,exercise,134,Templates can be versioned.,,true,,,Different pipelines can pin to different template versions.
-141,21,multiple_choice,main,,An Input Set saves a bundle of:,Input values|Secrets only|Nothing useful,0,,,
+141,21,multiple_choice,main,,An Input Set saves a bundle of:,Input values|Secrets only|Nothing useful,0,,,"An Input Set is designed to save and manage all the necessary input values needed for your pipeline run, not just secrets."
 142,21,true_false,preview,141,An Input Set saves pipeline input values.,,true,,,An overlay can combine multiple input sets into one run config.
 143,21,true_false,exercise,141,An overlay can combine multiple input sets.,,true,,,Overlays merge several input sets into one run config.
-144,21,multiple_choice,exercise,141,Input Sets help avoid re-entering:,Same values|All logic|Nothing,0,,,
-145,21,select_blank,exercise,141,An Input Set is a saved ___ bundle.,values|secrets|template,0,,,
-146,21,multiple_choice,exercise,141,A common Input Set use case is:,Different environments|Deleting pipelines|Renaming stages,0,,,
+144,21,multiple_choice,exercise,141,Input Sets help avoid re-entering:,Same values|All logic|Nothing,0,,,The primary purpose of an Input Set is to store common sets of values so you don't have to manually enter them every time you run a pipeline.
+145,21,select_blank,exercise,141,An Input Set is a saved ___ bundle.,values|secrets|template,0,,,An Input Set is fundamentally designed to save and manage bundles of input values that your pipelines need at runtime.
+146,21,multiple_choice,exercise,141,A common Input Set use case is:,Different environments|Deleting pipelines|Renaming stages,0,,,"Since different environments (like dev, staging, or prod) require different sets of credentials and parameters, an Input Set is perfect for managing those variations."
 147,21,true_false,exercise,141,Input Sets are unrelated to pipeline runs.,,false,,,They directly supply the values a run needs.
-148,22,multiple_choice,main,,A Harness expression references a:,Runtime value|Static file|Nothing dynamic,0,,,
+148,22,multiple_choice,main,,A Harness expression references a:,Runtime value|Static file|Nothing dynamic,0,,,"A Harness expression allows you to pull in a value that changes dynamically when the pipeline actually runs, making it much more flexible than static text."
 149,22,select_blank,preview,148,An expression references a ___ value.,runtime|static|nothing,0,,,Like <+pipeline.name> -- it keeps a pipeline generic instead of hardcoded.
 150,22,true_false,exercise,148,Expressions help avoid hardcoding values.,,true,,,A pipeline can reference dynamic context instead.
-151,22,multiple_choice,exercise,148,An expression might reference the current:,Pipeline name|Weather|Font size,0,,,
-152,22,select_blank,exercise,148,Expressions keep pipelines ___ instead of hardcoded.,generic|frozen|identical,0,,,
-153,22,multiple_choice,exercise,148,Variables let a template stay:,Reusable|Static only|Unusable,0,,,
+151,22,multiple_choice,exercise,148,An expression might reference the current:,Pipeline name|Weather|Font size,0,,,"Expressions are designed to pull dynamic data from the environment, so they can reference things like the current pipeline name rather than just a fixed text string."
+152,22,select_blank,exercise,148,Expressions keep pipelines ___ instead of hardcoded.,generic|frozen|identical,0,,,"By using expressions, you make your pipelines generic because they adapt their behavior based on context or input, instead of being locked into one specific setup."
+153,22,multiple_choice,exercise,148,Variables let a template stay:,Reusable|Static only|Unusable,0,,,Variables are key to reusability; they allow you to create a template once and then run it multiple times by simply passing in different values for those variables.
 154,22,true_false,exercise,148,Expressions can pull values from earlier steps.,,true,,,A later step can reference an earlier step's output.
-155,23,multiple_choice,main,,A trigger starts a pipeline:,Automatically|Manual only|Never,0,,,
+155,23,multiple_choice,main,,A trigger starts a pipeline:,Automatically|Manual only|Never,0,,,"A trigger is essentially an event listener that automatically starts the process when certain conditions are met, whether that's code pushed or time elapsed."
 156,23,true_false,preview,155,A trigger can start a pipeline automatically.,,true,,,"A webhook, a schedule, or a new artifact can all fire one."
 157,23,true_false,exercise,155,A trigger can fire on a new artifact.,,true,,,New artifact publication is a valid trigger source.
-158,23,multiple_choice,exercise,155,A cron-based trigger fires on a:,Schedule|Random moment|Manual click,0,,,
-159,23,select_blank,exercise,155,Triggers remove the need to run pipelines ___.,manually|automatically|never,0,,,
-160,23,multiple_choice,exercise,155,A webhook trigger commonly reacts to:,Git event|The weather|Nothing real,0,,,
+158,23,multiple_choice,exercise,155,A cron-based trigger fires on a:,Schedule|Random moment|Manual click,0,,,Cron-based triggers rely on a specific schedule defined by cron syntax; they aren't random and require precise timing to fire.
+159,23,select_blank,exercise,155,Triggers remove the need to run pipelines ___.,manually|automatically|never,0,,,"Triggers are designed to execute processes automatically when an event happens, meaning you no longer have to start them by hand."
+160,23,multiple_choice,exercise,155,A webhook trigger commonly reacts to:,Git event|The weather|Nothing real,0,,,"Webhooks are designed to listen for specific events from external services, most commonly changes or pushes within a Git repository."
 161,23,true_false,exercise,155,A pipeline can have more than one trigger.,,true,,,Multiple triggers can start the same pipeline.
-162,24,multiple_choice,main,,Harness governance is built on:,Open Policy|A checklist|Nothing automated,0,,,
+162,24,multiple_choice,main,,Harness governance is built on:,Open Policy|A checklist|Nothing automated,0,,,"Effective governance requires defining rules using structured policy languages like Open Policy Agent (OPA), which allows the system to enforce compliance automatically."
 163,24,select_blank,preview,162,Harness governance is built on Open ___.,Policy|Water|Season,0,,,Open Policy (OPA) evaluates pipelines and can block a run that violates a rule.
 164,24,true_false,exercise,162,A policy violation can block a pipeline run.,,true,,,"Governance enforces rules before execution, not just afterward."
-165,24,multiple_choice,exercise,162,Policy as Code lets rules be:,Version-controlled|Verbal only|Untracked,0,,,
-166,24,select_blank,exercise,162,OPA evaluates pipelines against written ___.,policies|invoices|diagrams,0,,,
-167,24,multiple_choice,exercise,162,A governance rule might require:,An approval|No steps|Nothing,0,,,
+165,24,multiple_choice,exercise,162,Policy as Code lets rules be:,Version-controlled|Verbal only|Untracked,0,,,"By treating policies as code, you can store them in a version control system (like Git), allowing for tracking changes, rollbacks, and peer review."
+166,24,select_blank,exercise,162,OPA evaluates pipelines against written ___.,policies|invoices|diagrams,0,,,"Open Policy Agent (OPA) is specifically designed to evaluate data and configurations against formal, written policies to ensure compliance before execution."
+167,24,multiple_choice,exercise,162,A governance rule might require:,An approval|No steps|Nothing,0,,,"Governance rules are designed to ensure compliance and control, which almost always involves a formal sign-off or approval process before changes can proceed."
 168,24,true_false,exercise,162,Policies can be scoped to specific projects.,,true,,,Governance rules can apply broadly or narrowly.
-169,25,multiple_choice,main,,Feature Flags decouple releasing code from:,Feature release|Writing tests|App build,0,,,
+169,25,multiple_choice,main,,Feature Flags decouple releasing code from:,Feature release|Writing tests|App build,0,,,"They allow you to deploy new code into production without immediately activating the feature, meaning you can decouple the technical release from the actual business feature rollout."
 170,25,true_false,preview,169,Feature Flags separate code release from feature release.,,true,,,"Toggle functionality on/off, or for a subset of users, at runtime."
 171,25,true_false,exercise,169,A flag can target a subset of users.,,true,,,"Flags support percentage/targeted rollouts, not just all-or-nothing."
-172,25,multiple_choice,exercise,169,Toggling a flag off usually needs:,No redeploy|A redeploy|A rebuild,0,,,
-173,25,select_blank,exercise,169,Feature Flags toggle functionality at ___.,runtime|build time|never,0,,,
-174,25,multiple_choice,exercise,169,A common Feature Flags use case is:,Beta test|Deleting data|Encrypting secrets,0,,,
+172,25,multiple_choice,exercise,169,Toggling a flag off usually needs:,No redeploy|A redeploy|A rebuild,0,,,"Because flags are usually managed by a centralized service or database, simply flipping the switch doesn't require you to rebuild or redeploy the entire application."
+173,25,select_blank,exercise,169,Feature Flags toggle functionality at ___.,runtime|build time|never,0,,,"They evaluate whether a feature should be active while the application is actually running and executing, which is the definition of runtime control."
+174,25,multiple_choice,exercise,169,A common Feature Flags use case is:,Beta test|Deleting data|Encrypting secrets,0,,,"Flags are perfect for controlled rollouts because they allow you to expose new features only to specific groups of users, like beta testers, without affecting the general user base."
 175,25,true_false,exercise,169,Feature Flags is a separate Harness module.,,true,,,It sits alongside CI and CD as its own module.
-176,26,multiple_choice,main,,STO (Security Testing Orchestration) orchestrates security:,Scanners|Marketing copy|Invoices,0,,,
+176,26,multiple_choice,main,,STO (Security Testing Orchestration) orchestrates security:,Scanners|Marketing copy|Invoices,0,,,"STO is designed to manage and coordinate various security tools, which are essentially scanners that check for vulnerabilities in your code or infrastructure. Marketing copy and invoices have nothing to do with technical security testing."
 177,26,true_false,preview,176,STO (Security Testing Orchestration) orchestrates security scanners in pipelines.,,true,,,"It aggregates results from static analysis, dependency checks, and dynamic testing."
 178,26,true_false,exercise,176,STO can aggregate results from multiple scanners.,,true,,,One unified view instead of many separate tool outputs.
-179,26,multiple_choice,exercise,176,A dependency vulnerability scan is a type of:,Security scan|Load test|UI test,0,,,
-180,26,select_blank,exercise,176,STO runs security scans as pipeline ___.,steps|invoices|secrets,0,,,
-181,26,multiple_choice,exercise,176,Running security checks in the pipeline enables:,Earlier detection|Later detection|No detection,0,,,
+179,26,multiple_choice,exercise,176,A dependency vulnerability scan is a type of:,Security scan|Load test|UI test,0,,,"Since it checks for known weaknesses in third-party libraries, this falls directly under the umbrella of security testing. Load tests check performance, while UI tests verify user interface functionality."
+180,26,select_blank,exercise,176,STO runs security scans as pipeline ___.,steps|invoices|secrets,0,,,"In a CI/CD context, running a scan means adding it as an explicit step in the build pipeline to ensure automated execution. Invoices and secrets are data types or records, not operational parts of a workflow."
+181,26,multiple_choice,exercise,176,Running security checks in the pipeline enables:,Earlier detection|Later detection|No detection,0,,,"Integrating scans into the pipeline means you find vulnerabilities immediately after code changes, allowing for quick fixes rather than waiting until a much later stage. This is known as 'shifting left' security."
 182,26,true_false,exercise,176,STO replaces the need for any scanning tools.,,false,,,"It orchestrates existing scanners, not replaces them."
-183,27,multiple_choice,main,,Chaos Engineering deliberately introduces:,Failures|New features|Documentation,0,,,
+183,27,multiple_choice,main,,Chaos Engineering deliberately introduces:,Failures|New features|Documentation,0,,,The core idea of Chaos Engineering is to intentionally simulate failures (like network outages or service crashes) in a controlled environment to test resilience. You don't introduce features or documentation when running chaos experiments.
 184,27,true_false,preview,183,Chaos Engineering injects failures on purpose.,,true,,,"Like killing a pod or adding latency, to verify real resilience."
 185,27,true_false,exercise,183,Chaos experiments are meant to be controlled.,,true,,,"The goal is a safe, bounded test, not a real outage."
-186,27,multiple_choice,exercise,183,Killing a pod on purpose tests:,Resilience|UI design|Billing accuracy,0,,,
-187,27,select_blank,exercise,183,Chaos Engineering verifies a system's real ___.,resilience|revenue|colors,0,,,
-188,27,multiple_choice,exercise,183,A chaos experiment might add:,Network latency|New users|Free coupons,0,,,
+186,27,multiple_choice,exercise,183,Killing a pod on purpose tests:,Resilience|UI design|Billing accuracy,0,,,"Intentionally failing a component, like killing a pod, is the definition of testing how resilient your system is to failure. This process verifies stability, not UI aesthetics or billing accuracy."
+187,27,select_blank,exercise,183,Chaos Engineering verifies a system's real ___.,resilience|revenue|colors,0,,,"Chaos engineering is specifically designed to test how robust your system remains when things inevitably go wrong, verifying its real-world resilience. It has nothing to do with revenue or visual design."
+188,27,multiple_choice,exercise,183,A chaos experiment might add:,Network latency|New users|Free coupons,0,,,"Chaos experiments simulate realistic failures, such as introducing network latency or packet loss into the environment. New users and free coupons are business changes, not system failure simulations."
 189,27,true_false,exercise,183,Chaos experiments should run without any monitoring.,,false,,,Monitoring during the experiment is essential to learn from it.
-190,28,multiple_choice,main,,CCM (Cloud Cost Management) mainly helps you manage:,Cloud spend|Source code|User passwords,0,,,
+190,28,multiple_choice,main,,CCM (Cloud Cost Management) mainly helps you manage:,Cloud spend|Source code|User passwords,0,,,"CCM is a financial tool focused on monitoring and optimizing your cloud spending to prevent unexpected bills. It deals with money spent on infrastructure, not source code or user passwords."
 191,28,select_blank,preview,190,CCM (Cloud Cost Management) keeps track of cloud ___.,spend|weather|traffic,0,,,It flags waste and can auto-apply cost-saving actions like stopping idle instances.
 192,28,true_false,exercise,190,"CCM can flag idle, wasted resources.",,true,,,Idle-resource detection is a core CCM feature.
-193,28,multiple_choice,exercise,190,CCM can automatically:,Stop idle VMs|Write code|Delete repos,0,,,
-194,28,select_blank,exercise,190,CCM tracks spend across cloud ___.,providers|employees|meetings,0,,,
-195,28,multiple_choice,exercise,190,A common CCM finding is:,Unused resources|Perfect efficiency|Nothing ever,0,,,
+193,28,multiple_choice,exercise,190,CCM can automatically:,Stop idle VMs|Write code|Delete repos,0,,,"A key function of CCM is identifying and automatically shutting down resources, like Virtual Machines, that are running but not being used. It manages costs, so it can't write application code or delete repositories."
+194,28,select_blank,exercise,190,CCM tracks spend across cloud ___.,providers|employees|meetings,0,,,"Cloud cost management specifically monitors spending related to the various service providers you use, like AWS or Azure. It tracks where your money is going across those external vendors."
+195,28,multiple_choice,exercise,190,A common CCM finding is:,Unused resources|Perfect efficiency|Nothing ever,0,,,"Finding unused resources is extremely common because developers often spin up services and forget to turn them off, leading to wasted cloud spend. This 'zombie' resource spending is a major target for CCM efforts."
 196,28,true_false,exercise,190,CCM only works for a single cloud provider.,,false,,,It's designed to track spend across multiple providers.
-197,29,multiple_choice,main,,An IDP (Internal Developer Portal) mainly offers developers:,Self-service catalog|Nothing useful|Chat tool,0,,,
+197,29,multiple_choice,main,,An IDP (Internal Developer Portal) mainly offers developers:,Self-service catalog|Nothing useful|Chat tool,0,,,"The primary function of an IDP is to give developers a single, self-service place where they can find and provision all the necessary internal tools and services without needing manual helpdesk requests."
 198,29,true_false,preview,197,An IDP (Internal Developer Portal) gives developers a self-service catalog.,,true,,,"It also offers golden-path templates and docs, cutting tickets to the platform team."
 199,29,true_false,exercise,197,An IDP can reduce tickets to platform teams.,,true,,,Self-service replaces manual request-and-wait workflows.
-200,29,multiple_choice,exercise,197,A 'golden path' template gives developers a:,A template|Random guess|Nothing,0,,,
-201,29,select_blank,exercise,197,An IDP acts as a service ___.,catalog|graveyard|invoice,0,,,
+200,29,multiple_choice,exercise,197,A 'golden path' template gives developers a:,A template|Random guess|Nothing,0,,,"It provides a pre-approved, best-practice template that guides developers toward building applications in the most secure and efficient way possible from day one. This minimizes risk and ensures compliance."
+201,29,select_blank,exercise,197,An IDP acts as a service ___.,catalog|graveyard|invoice,0,,,"Since an Internal Developer Portal centralizes access, it functions as a comprehensive catalog listing all the internal tools and services that developers can use. It's the single source of truth for available capabilities."
 202,29,multiple_choice,exercise,197,IDPs mainly serve which audience?,Developers|Customers|Investors,0,,,
 203,29,true_false,exercise,197,An IDP replaces the need for a platform team entirely.,,false,,,"It's a tool platform teams build and offer, not a replacement for them."
 204,30,multiple_choice,main,,SEI (Software Engineering Insights) mainly surfaces:,Engineering metrics|Marketing data|Invoices,0,,,
@@ -209,31 +209,31 @@ id,unit_id,type,role,related_main_id,prompt,options,correct_index,image,audio,ex
 208,30,select_blank,exercise,204,SEI pulls data from your existing ___.,tools|invoices|meetings,0,,,
 209,30,multiple_choice,exercise,204,Cycle time roughly measures:,Delivery speed|Server uptime|Disk usage,0,,,
 210,30,true_false,exercise,204,SEI requires manually re-entering all engineering data.,,false,,,It integrates with existing tools instead of manual re-entry.
-211,31,multiple_choice,main,,Harness Open Source is:,Free & self-hosted|Paid only|Cloud-only,0,,,
+211,31,multiple_choice,main,,Harness Open Source is:,Free & self-hosted|Paid only|Cloud-only,0,,,The open source version provides the core functionality for free and gives you the flexibility to run it on your own infrastructure rather than a vendor's cloud.
 212,31,true_false,preview,211,Harness Open Source is free and self-hosted.,,true,,,The full Platform adds managed hosting and every module on top.
 213,31,true_false,exercise,211,The full Platform includes more modules than Open Source.,,true,,,Open Source covers core CI/CD; the Platform adds every module.
-214,31,multiple_choice,exercise,211,Self-hosting Harness Open Source means running it:,Yourself|Cloud only|Nowhere,0,,,
-215,31,select_blank,exercise,211,Harness Open Source is the ___ core.,free|paid|hidden,0,,,
-216,31,multiple_choice,exercise,211,Choosing the full Platform often means wanting:,Managed hosting|No support|Fewer features,0,,,
+214,31,multiple_choice,exercise,211,Self-hosting Harness Open Source means running it:,Yourself|Cloud only|Nowhere,0,,,"Self-hosting means that you, or your team, are responsible for setting up, maintaining, and running the entire application on your own servers."
+215,31,select_blank,exercise,211,Harness Open Source is the ___ core.,free|paid|hidden,0,,,The open source version provides access to the fundamental core features of Harness without requiring a paid subscription.
+216,31,multiple_choice,exercise,211,Choosing the full Platform often means wanting:,Managed hosting|No support|Fewer features,0,,,"Choosing the full Platform usually means prioritizing managed hosting, where the vendor handles infrastructure and maintenance for you, rather than self-managing it."
 217,31,true_false,exercise,211,Harness Open Source includes an artifact registry.,,true,,,"SCM, CI/CD, and artifact registry are core included pieces."
-218,32,multiple_choice,main,,"Harness scopes resources under Account, Org, then:",Project|Server|Database,0,,,
+218,32,multiple_choice,main,,"Harness scopes resources under Account, Org, then:",Project|Server|Database,0,,,"Harness follows a clear hierarchy: resources are first grouped under an Account, then into an Organization (Org), and finally segmented into specific Projects."
 219,32,select_blank,preview,218,A Project always sits within an ___.,organization|invoice|secret,0,,,"Harness scopes resources under Account > Organization > Project, with RBAC at each level."
 220,32,true_false,exercise,218,RBAC controls who can do what.,,true,,,Roles and permissions gate access at each scope level.
-221,32,multiple_choice,exercise,218,A Project typically sits inside an:,Organization|Individual pipeline|Secret,0,,,
-222,32,order,exercise,218,"Order Harness's scoping levels, broadest first.",Account|Organization|Project,,,,
-223,32,select_blank,exercise,218,RBAC restricts actions based on a user's ___.,role|location|mood,0,,,
-224,32,multiple_choice,exercise,218,Giving every user full admin access is:,Risky|Best practice|Required,0,,,
-225,33,multiple_choice,main,,Pipeline notifications can go to:,"Slack, email|Nowhere ever|CLI only",0,,,
+221,32,multiple_choice,exercise,218,A Project typically sits inside an:,Organization|Individual pipeline|Secret,0,,,"A Project needs to be housed within an Organization because the Organization provides the necessary overarching boundary, security context, and resource management framework."
+222,32,order,exercise,218,"Order Harness's scoping levels, broadest first.",Account|Organization|Project,,,,"The scope starts at the highest level, which is the Account, then narrows down to the Organization, and finally restricts actions to a specific Project."
+223,32,select_blank,exercise,218,RBAC restricts actions based on a user's ___.,role|location|mood,0,,,"RBAC stands for Role-Based Access Control, meaning permissions are tied to the specific job function or 'role' assigned to a user, not their physical location or current mood."
+224,32,multiple_choice,exercise,218,Giving every user full admin access is:,Risky|Best practice|Required,0,,,"This is highly risky because it violates the principle of least privilege, meaning users should only have the minimum access necessary to do their job and nothing more."
+225,33,multiple_choice,main,,Pipeline notifications can go to:,"Slack, email|Nowhere ever|CLI only",0,,,"Pipelines are designed for integration and visibility, allowing you to send alerts through common tools like Slack or traditional methods such as email."
 226,33,true_false,preview,225,Pipeline notifications can be sent to Slack.,,true,,,Email and webhooks work too -- and the execution view shows real-time logs.
 227,33,true_false,exercise,225,The execution view shows step-by-step logs.,,true,,,Real-time logs help debug a run as it happens.
-228,33,multiple_choice,exercise,225,A notification is often sent on:,Pipeline failure|Random intervals|Nothing,0,,,
-229,33,select_blank,exercise,225,Notifications keep teams ___ of pipeline events.,aware|unaware|banned,0,,,
-230,33,multiple_choice,exercise,225,Watching logs live helps you:,Debug faster|Deploy slower|Skip testing,0,,,
+228,33,multiple_choice,exercise,225,A notification is often sent on:,Pipeline failure|Random intervals|Nothing,0,,,Notifications are primarily triggered by critical events like a pipeline failing so you know immediately when something breaks; they aren't sent randomly.
+229,33,select_blank,exercise,225,Notifications keep teams ___ of pipeline events.,aware|unaware|banned,0,,,The whole point of notifications is to ensure everyone stays updated and fully aware of what's happening with the pipeline.
+230,33,multiple_choice,exercise,225,Watching logs live helps you:,Debug faster|Deploy slower|Skip testing,0,,,Seeing logs stream in real time lets you pinpoint errors and debug issues much faster than waiting for a full report.
 231,33,true_false,exercise,225,Notifications can only be sent via email.,,false,,,Slack and webhooks are common channels too.
 232,34,multiple_choice,main,,Hardcoding a secret in pipeline YAML is a:,Bad practice|Best practice|Requirement,0,,,
 233,34,true_false,preview,232,Hardcoding secrets in pipeline YAML is risky.,,true,,,"Other anti-patterns: one giant pipeline instead of templates, and skipping approval gates."
 234,34,true_false,exercise,232,A single giant pipeline is harder to reuse.,,true,,,Breaking logic into templates keeps things maintainable.
-235,34,multiple_choice,exercise,232,Skipping approvals before prod deploys is:,Risky|Always safe|Required,0,,,
-236,34,select_blank,exercise,232,Reusable templates beat one giant ___.,pipeline|secret|connector,0,,,
+235,34,multiple_choice,exercise,232,Skipping approvals before prod deploys is:,Risky|Always safe|Required,0,,,Bypassing required approvals significantly increases risk because it removes the necessary human checks and balances before code hits production.
+236,34,select_blank,exercise,232,Reusable templates beat one giant ___.,pipeline|secret|connector,0,,,"Using small, reusable templates keeps your configurations clean and manageable, preventing you from having one massive, unreadable pipeline file."
 237,34,multiple_choice,exercise,232,A good practice is storing secrets:,"Encrypted, referenced|Plain YAML|Chat messages",0,,,
 238,34,true_false,exercise,232,Following best practices avoids most Harness anti-patterns.,,true,,,"Reuse, secrets hygiene, and gating are the core wins."
