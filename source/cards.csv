@@ -1,12 +1,12 @@
 id,unit_id,type,role,related_main_id,prompt,options,correct_index,image,audio,explanation
-1,1,multiple_choice,main,,Harness is mainly a unified:,CI/CD platform|Text editor|OS kernel,0,,,
+1,1,multiple_choice,main,,Harness is mainly a unified:,CI/CD platform|Text editor|OS kernel,0,,,"Harness is designed to be a comprehensive CI/CD platform, providing the tools and orchestration needed for continuous delivery. The other options are too narrow or fundamentally different from its purpose."
 2,1,true_false,preview,1,Harness unifies CI/CD into one platform.,,true,,,"It replaces a patchwork of separate build, deploy, and monitoring tools."
 3,1,true_false,exercise,1,Harness replaces many separate DevOps tools.,,true,,,"It unifies build, deploy, and more in one platform."
-4,1,multiple_choice,exercise,1,A key benefit of one platform is:,Less sprawl|Slower builds|More manual,0,,,
-5,1,select_blank,exercise,1,Harness aims to ___ the DevOps toolchain.,unify|fragment|remove,0,,,
-6,1,multiple_choice,exercise,1,Harness is best described as a:,DevOps platform|Text editor|Database,0,,,
+4,1,multiple_choice,exercise,1,A key benefit of one platform is:,Less sprawl|Slower builds|More manual,0,,,"By consolidating various tools onto one platform, you significantly reduce 'sprawl'—the complexity of managing many disparate systems. Using a single platform is much more efficient than relying on manual processes or slower builds."
+5,1,select_blank,exercise,1,Harness aims to ___ the DevOps toolchain.,unify|fragment|remove,0,,,The core goal of Harness is to unify the entire DevOps toolchain into a cohesive workflow. Fragmenting or removing parts of the toolchain defeats the purpose of modern continuous delivery practices.
+6,1,multiple_choice,exercise,1,Harness is best described as a:,DevOps platform|Text editor|Database,0,,,It's most accurate to describe Harness as a dedicated DevOps platform because it provides end-to-end capabilities for automating software delivery. It is neither just a text editor nor a database.
 7,1,true_false,exercise,1,"Harness only handles code building, not deploys.",,false,,,"It covers CI and CD together, plus more modules."
-8,2,multiple_choice,main,,Harness organizes functionality into:,Modules|One monolith|Plugins only,0,,,
+8,2,multiple_choice,main,,Harness organizes functionality into:,Modules|One monolith|Plugins only,0,,,"Harness structures its functionality into manageable Modules, allowing users to build complex pipelines from discrete components. Treating it as one monolith would be too rigid, and relying only on plugins wouldn't capture its core orchestration capabilities."
 9,2,select_blank,preview,8,Harness splits features into ___.,modules|one file|nothing,0,,,"CI, CD, Feature Flags, Security Testing, and more each get their own module."
 10,2,true_false,exercise,8,CI and CD are separate Harness modules.,,true,,,"Each is purpose-built, sharing common pipeline components."
 11,2,multiple_choice,exercise,8,Feature Flags is a Harness:,Module|Programming language|Database,0,,,"A module is one of the specific, reusable components designed to perform a function within the pipeline. It's not a programming language or just a database structure itself."
@@ -48,14 +48,14 @@ id,unit_id,type,role,related_main_id,prompt,options,correct_index,image,audio,ex
 47,7,select_blank,exercise,43,Connectors avoid hardcoding ___ in pipelines.,credentials|stage names|pipeline IDs,0,,,"By using a connector, you keep sensitive information like API keys and passwords out of your source code, which prevents accidental exposure if the pipeline definition were ever viewed."
 48,7,multiple_choice,exercise,43,A Docker registry connector is used to:,Push/pull images|Run tests|Send email,0,,,"A Docker registry connector manages the lifecycle of your containers, allowing the pipeline to securely pull base images or push newly built ones after deployment."
 49,7,true_false,exercise,43,Every pipeline needs its own separate connector.,,false,,,Connectors are reusable across pipelines.
-50,8,multiple_choice,main,,"Secrets should be referenced, never:",Hardcoded|Encrypted|Named,0,,,
+50,8,multiple_choice,main,,"Secrets should be referenced, never:",Hardcoded|Encrypted|Named,0,,,"You must reference secrets by name; embedding the actual value (hardcoding) means that secret will be visible in your source code history, which is a major security risk."
 51,8,true_false,preview,50,"Secrets should be referenced, never hardcoded.",,true,,,They're stored encrypted and referenced by name in pipelines.
 52,8,true_false,exercise,50,Harness can integrate with HashiCorp Vault.,,true,,,External secret managers are a supported integration.
-53,8,multiple_choice,exercise,50,A pipeline references a secret by its:,Name|Plain value|File path,0,,,
-54,8,select_blank,exercise,50,"Secrets are stored ___, not as plain text.",encrypted|openly|in git,0,,,
-55,8,multiple_choice,exercise,50,Putting a password directly in YAML is:,Bad practice|Best practice|Required,0,,,
+53,8,multiple_choice,exercise,50,A pipeline references a secret by its:,Name|Plain value|File path,0,,,"Pipelines are designed to look up secrets using a defined key or name, keeping the sensitive value itself out of the pipeline configuration."
+54,8,select_blank,exercise,50,"Secrets are stored ___, not as plain text.",encrypted|openly|in git,0,,,"They must be stored using strong encryption so that even if unauthorized people gain access to the storage system, they cannot read the actual secret values."
+55,8,multiple_choice,exercise,50,Putting a password directly in YAML is:,Bad practice|Best practice|Required,0,,,"This is extremely poor security because it permanently writes sensitive credentials into your configuration files, making them easily visible to anyone with access to the repository."
 56,8,true_false,exercise,50,Secrets can be scoped to a project.,,true,,,"Access can be scoped at account, org, or project level."
-57,9,multiple_choice,main,,A basic CI pipeline builds an:,Artifact|Invoice|Database schema,0,,,
+57,9,multiple_choice,main,,A basic CI pipeline builds an:,Artifact|Invoice|Database schema,0,,,"The primary goal of Continuous Integration is to take the source code and package it into a deployable unit, which we call an artifact."
 58,9,select_blank,preview,57,A CI pipeline uploads a built ___.,artifact|invoice|meeting,0,,,"It pulls the code, builds an artifact, tests it, then uploads it to a registry."
 59,9,true_false,exercise,57,A CI pipeline typically includes testing.,,true,,,Build-then-test is the standard CI shape.
 60,9,multiple_choice,exercise,57,A built artifact is usually uploaded to a:,Registry|Text file|Nowhere,0,,,"Built artifacts are compiled, ready-to-run packages that need to be stored and versioned in a dedicated container registry. A text file is just source code or logs, not the final deployable product."
@@ -200,14 +200,14 @@ id,unit_id,type,role,related_main_id,prompt,options,correct_index,image,audio,ex
 199,29,true_false,exercise,197,An IDP can reduce tickets to platform teams.,,true,,,Self-service replaces manual request-and-wait workflows.
 200,29,multiple_choice,exercise,197,A 'golden path' template gives developers a:,A template|Random guess|Nothing,0,,,"It provides a pre-approved, best-practice template that guides developers toward building applications in the most secure and efficient way possible from day one. This minimizes risk and ensures compliance."
 201,29,select_blank,exercise,197,An IDP acts as a service ___.,catalog|graveyard|invoice,0,,,"Since an Internal Developer Portal centralizes access, it functions as a comprehensive catalog listing all the internal tools and services that developers can use. It's the single source of truth for available capabilities."
-202,29,multiple_choice,exercise,197,IDPs mainly serve which audience?,Developers|Customers|Investors,0,,,
+202,29,multiple_choice,exercise,197,IDPs mainly serve which audience?,Developers|Customers|Investors,0,,,IDPs are designed to streamline the internal workflow by providing tools and services directly to development teams so they can build faster. They focus on improving developer experience rather than selling features to customers or reporting metrics to investors.
 203,29,true_false,exercise,197,An IDP replaces the need for a platform team entirely.,,false,,,"It's a tool platform teams build and offer, not a replacement for them."
-204,30,multiple_choice,main,,SEI (Software Engineering Insights) mainly surfaces:,Engineering metrics|Marketing data|Invoices,0,,,
+204,30,multiple_choice,main,,SEI (Software Engineering Insights) mainly surfaces:,Engineering metrics|Marketing data|Invoices,0,,,"Since it's for software engineers, SEI is built to surface deep technical performance indicators and process measurements. It analyzes how the code and development process are actually performing, not just sales or billing data."
 205,30,select_blank,preview,204,SEI (Software Engineering Insights) mainly surfaces engineering ___.,metrics|invoices|recipes,0,,,"Like DORA metrics, cycle time, and PR review time from your tools."
 206,30,true_false,exercise,204,DORA metrics are a common SEI output.,,true,,,"Deployment frequency, lead time, and similar metrics are core DORA measures."
-207,30,multiple_choice,exercise,204,SEI can help spot:,Process bottlenecks|Weather patterns|Stock prices,0,,,
-208,30,select_blank,exercise,204,SEI pulls data from your existing ___.,tools|invoices|meetings,0,,,
-209,30,multiple_choice,exercise,204,Cycle time roughly measures:,Delivery speed|Server uptime|Disk usage,0,,,
+207,30,multiple_choice,exercise,204,SEI can help spot:,Process bottlenecks|Weather patterns|Stock prices,0,,,"By tracking development workflows and data flow, SEI is excellent at pinpointing areas where work slows down or gets stuck—those are the process bottlenecks. It deals with internal software processes, not external variables like weather or markets."
+208,30,select_blank,exercise,204,SEI pulls data from your existing ___.,tools|invoices|meetings,0,,,"To understand the true state of engineering, SEI needs to pull raw data directly from your existing developer tools and repositories. It analyzes what you are already doing in places like Jira or GitHub, rather than relying on billing records or meeting notes."
+209,30,multiple_choice,exercise,204,Cycle time roughly measures:,Delivery speed|Server uptime|Disk usage,0,,,"Cycle time tracks the total elapsed time from when work starts until it is fully delivered to the user, making it a key metric for overall delivery speed. It measures the flow of features, not how long your server stays online or how much disk space you use."
 210,30,true_false,exercise,204,SEI requires manually re-entering all engineering data.,,false,,,It integrates with existing tools instead of manual re-entry.
 211,31,multiple_choice,main,,Harness Open Source is:,Free & self-hosted|Paid only|Cloud-only,0,,,The open source version provides the core functionality for free and gives you the flexibility to run it on your own infrastructure rather than a vendor's cloud.
 212,31,true_false,preview,211,Harness Open Source is free and self-hosted.,,true,,,The full Platform adds managed hosting and every module on top.
