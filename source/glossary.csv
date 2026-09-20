@@ -6,7 +6,7 @@ stage,A stage is one phase of a pipeline (like 'build' or 'deploy') that groups 
 step,"A step is the smallest unit of work in a Harness pipeline — one specific action, like running a script or a single test.",,22
 Delegate,"The Delegate is a lightweight worker process you run inside your own network — e.g. installed as a pod in your Kubernetes cluster. It's how cloud-hosted Harness reaches your private servers, clusters, and clouds to actually carry out pipeline tasks.",,29
 selector,A selector is a tag you put on a Delegate so Harness can route a specific task to that specific Delegate — handy when you run more than one Delegate for different networks or clouds.,,37
-connector,"A connector is a saved, reusable object that stores the login credentials and settings for an outside tool (like GitHub or Docker Hub), so pipelines can reference it by name instead of hardcoding logins.",,43
+connector,"A connector is a saved, reusable object that stores the login credentials and settings for an outside tool (like GitHub or Docker Hub), so pipelines can reference it by name instead of hardcoding logins.",,32
 secrets,"Secrets are pieces of sensitive data (like a password or API token) that Harness stores encrypted and lets pipelines reference by name, so the real value is never written into pipeline YAML.",,43
 HashiCorp Vault,"HashiCorp Vault is a popular third-party tool for storing and managing secrets, which Harness can plug into instead of (or alongside) its own built-in secrets manager.",https://www.vaultproject.io/,50
 artifact,"An artifact is the packaged output of a build — like a compiled app, a container image, or a zip file — that gets tested and then shipped somewhere for deployment.",,57
