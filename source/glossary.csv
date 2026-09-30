@@ -66,3 +66,23 @@ DORA,DevOps Research and Assessment: the research group behind four key measures
 API,Application programming interface: a defined way for one program to ask another for something.,https://en.wikipedia.org/wiki/API,
 AWS,"Amazon Web Services: Amazon's cloud platform for renting servers, storage and other services.",https://en.wikipedia.org/wiki/Amazon_Web_Services,
 SCM,Source code management: tools such as Git that store and track changes to code.,https://en.wikipedia.org/wiki/Version_control,
+OS,Operating system: the core software that manages a computer's hardware and runs other programs.,https://en.wikipedia.org/wiki/Operating_system,1
+IDs,Identifiers: unique names or codes that tell one item apart from another.,https://en.wikipedia.org/wiki/Identifier,47
+HTTP,HyperText Transfer Protocol: the set of rules web browsers and servers use to exchange pages and data.,https://en.wikipedia.org/wiki/HTTP,247
+pipelines,"In Harness, the automated sequence of stages that builds, tests and deploys software.",https://developer.harness.io/docs/platform/pipelines/add-a-stage/,8
+stages,"The major phases of a Harness pipeline, such as build or deploy.",https://developer.harness.io/docs/platform/pipelines/add-a-stage/,22
+steps,The individual tasks inside a Harness stage.,https://developer.harness.io/docs/platform/pipelines/add-a-stage/,22
+Delegates,Lightweight Harness workers you run in your own infrastructure to carry out tasks.,https://developer.harness.io/docs/platform/delegates/delegate-concepts/delegate-overview/,29
+selectors,Tags used to choose which Harness Delegate should handle a task.,https://developer.harness.io/docs/platform/delegates/manage-delegates/select-delegates-with-selectors/,37
+connectors,Harness objects that store how to reach an external system such as a cloud or Git provider.,https://developer.harness.io/docs/category/connectors,29
+triggers,"Rules that start a Harness pipeline automatically, for example on a Git push or a schedule.",https://developer.harness.io/docs/platform/triggers/triggers-overview/,71
+Services,"In Harness CD, the definition of what you deploy, such as an application and its artifacts.",https://developer.harness.io/docs/continuous-delivery/x-platform-cd-features/services/services-overview/,240
+Environments,"In Harness CD, the definition of where you deploy, such as dev, staging or production.",https://developer.harness.io/docs/continuous-delivery/x-platform-cd-features/environments/environment-overview/,29
+Infrastructure Definitions,Harness settings that describe the exact cluster or hosts inside an environment where a service is deployed.,https://developer.harness.io/docs/continuous-delivery/x-platform-cd-features/environments/create-environments/,93
+approvals,Manual or automated checks that must pass before a pipeline is allowed to continue.,https://developer.harness.io/docs/platform/approvals/approvals-tutorial/,113
+rollbacks,Returning a deployment to its previous working version after a problem.,https://en.wikipedia.org/wiki/Rollback_(data_management),120
+templates,"Reusable pipeline, stage or step definitions that many pipelines can share.",https://developer.harness.io/docs/platform/templates/template/,134
+Input Sets,Saved collections of runtime input values that you can reuse when running a pipeline.,https://developer.harness.io/docs/platform/pipelines/input-sets/,141
+expressions,Harness placeholders that are filled in with a value when the pipeline runs.,https://developer.harness.io/docs/platform/variables-and-expressions/harness-variables/,148
+webhooks,Automatic HTTP calls one system makes to another when an event happens.,https://en.wikipedia.org/wiki/Webhook,156
+golden-path,"A recommended, pre-approved way to build and ship software that platform teams make easy to follow.",https://en.wikipedia.org/wiki/Platform_engineering,197
