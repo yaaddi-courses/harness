@@ -230,12 +230,12 @@ id,unit_id,type,role,related_main_id,prompt,options,correct_index,image,audio,ex
 229,33,select_blank,exercise,225,Notifications keep teams ___ of pipeline events.,aware|unaware|banned,0,,,The whole point of notifications is to ensure everyone stays updated and fully aware of what's happening with the pipeline.
 230,33,multiple_choice,exercise,225,Watching logs live helps you:,Debug faster|Deploy slower|Skip testing,0,,,Seeing logs stream in real time lets you pinpoint errors and debug issues much faster than waiting for a full report.
 231,33,true_false,exercise,225,Notifications can only be sent via email.,,false,,,Slack and webhooks are common channels too.
-232,34,multiple_choice,main,,Hardcoding a secret in pipeline YAML is a:,Bad practice|Best practice|Requirement,0,,,
+232,34,multiple_choice,main,,Hardcoding a secret in pipeline YAML is a:,Bad practice|Best practice|Requirement,0,,,"Anyone who can read the pipeline YAML can read a hardcoded secret, and it stays in version history."
 233,34,true_false,preview,232,Hardcoding secrets in pipeline YAML is risky.,,true,,,"Other anti-patterns: one giant pipeline instead of templates, and skipping approval gates."
 234,34,true_false,exercise,232,A single giant pipeline is harder to reuse.,,true,,,Breaking logic into templates keeps things maintainable.
 235,34,multiple_choice,exercise,232,Skipping approvals before prod deploys is:,Risky|Always safe|Required,0,,,Bypassing required approvals significantly increases risk because it removes the necessary human checks and balances before code hits production.
 236,34,select_blank,exercise,232,Reusable templates beat one giant ___.,pipeline|secret|connector,0,,,"Using small, reusable templates keeps your configurations clean and manageable, preventing you from having one massive, unreadable pipeline file."
-237,34,multiple_choice,exercise,232,A good practice is storing secrets:,"Encrypted, referenced|Plain YAML|Chat messages",0,,,
+237,34,multiple_choice,exercise,232,A good practice is storing secrets:,"Encrypted, referenced|Plain YAML|Chat messages",0,,,"Store secrets encrypted in a secrets manager and reference them by name, so the YAML never contains the value."
 238,34,true_false,exercise,232,Following best practices avoids most Harness anti-patterns.,,true,,,"Reuse, secrets hygiene, and gating are the core wins."
 239,5,true_false,preview,240,Who runs the software in SaaS?,The vendor|You|Nobody,true,,,With SaaS the vendor hosts and runs the software; you use it over the internet.
 240,5,multiple_choice,main,,SaaS stands for what?,Software service|Server storage|Secure system,0,,,The provider hosts it; you just access it over the internet.
