@@ -250,3 +250,44 @@ id,unit_id,type,role,related_main_id,prompt,options,correct_index,image,audio,ex
 249,35,match_pairs,exercise,244,Link every term to its idea.,pod↔Smallest Kubernetes unit|golden path↔Approved template|DORA metrics↔Four delivery measures|cycle time↔Start to finish,,,,Each term is paired with its plain-language meaning.
 250,35,match_pairs,exercise,244,What does each term mean?,Harness Open Source↔Free self-hosted core|RBAC↔Role-based permissions|execution view↔Live pipeline screen|SaaS↔Vendor-hosted software,,,,Each term is paired with its plain-language meaning.
 251,35,true_false,exercise,244,selector means third-party secret store.,,false,,,No: selector means delegate routing tag.
+252,1,multiple_choice,exam,,Harness is mainly a unified:,CI/CD platform|Code editor|Social network,0,,,It brings continuous integration and delivery into one platform.
+253,2,multiple_choice,exam,,Harness splits features into:,Branches|Modules|Folders,1,,,Each module covers a part of the delivery process.
+254,3,multiple_choice,exam,,A pipeline is a full:,Database|Script file|Workflow,2,,,It defines how code moves from commit to production.
+255,4,multiple_choice,exam,,A stage groups several:,Steps|Pipelines|Accounts,0,,,Steps are the individual actions inside it.
+256,4,true_false,exam,,A step contains several stages.,,false,,,"A stage contains steps, not the other way round."
+257,5,multiple_choice,exam,,The Delegate runs inside your:,Browser|Repository|Network,2,,,That gives it secure access to your internal tools.
+258,5,true_false,exam,,"With SaaS, the provider hosts the software.",,true,,,You simply access it over the internet.
+259,6,multiple_choice,exam,,A delegate selector routes tasks by:,Size|Tag|Colour,1,,,Tags make sure the right delegate picks the task.
+260,7,multiple_choice,exam,,A connector stores login details and:,Source code|Test results|Settings,2,,,It holds connection settings for a third-party tool.
+261,8,multiple_choice,exam,,A secret should be referenced by:,Name|Value|Length,0,,,Never embed the actual value in the pipeline.
+262,20,true_false,exam,,A secret in private YAML is automatically safe.,,false,,,Anyone who can read the YAML can read the secret.
+263,9,multiple_choice,exam,,A basic CI pipeline produces an:,Invoice|Audit|Artifact,2,,,Source code is packaged into a deployable unit.
+264,10,multiple_choice,exam,,Harness CI Cloud runs builds on:,Managed VMs|Your laptop|Paper forms,0,,,Harness operates the build machines for you.
+265,11,multiple_choice,exam,,A trigger decides:,Which cloud|When it runs|Who pays,1,,,It is the event or timing that starts a run.
+266,12,multiple_choice,exam,,Test Intelligence runs only the:,Slowest tests|Oldest tests|Relevant tests,2,,,"Running fewer, affected tests speeds up builds."
+267,12,true_false,exam,,Test Intelligence runs every test on every build.,,false,,,It runs only a subset of the most relevant tests.
+268,13,multiple_choice,exam,,Cache Intelligence reuses what?,Dashboards|Earlier results|Passwords,1,,,It stores results from previous builds to save time.
+269,14,multiple_choice,exam,,A Service in Harness CD defines what:,Costs money|Runs tests|Gets deployed,2,,,It describes the application or artifact.
+270,15,multiple_choice,exam,,A canary release sends new code to:,Some traffic|All traffic|No traffic,0,,,It reaches a small subset of users first.
+271,15,true_false,exam,,A rolling update replaces everything at the same instant.,,false,,,"Rolling, canary and blue-green all control how a new version reaches users."
+272,16,multiple_choice,exam,,In GitOps the source of truth is:,The cluster|A wiki|Git,2,,,Git holds the desired state with an auditable history.
+273,17,multiple_choice,exam,,An approval pauses a pipeline for a:,Human decision|Faster build|New cache,0,,,An authorized person must approve it before it continues.
+274,18,multiple_choice,exam,,A rollback returns to a:,New branch|Prior state|Future plan,1,,,It restores the last known good state.
+275,19,multiple_choice,exam,,Continuous Verification compares new metrics to a:,Budget|Prediction|Baseline,2,,,It watches health while a deployment happens.
+276,20,multiple_choice,exam,,Templates exist to avoid duplicate:,YAML|Servers|Meetings,0,,,You define a standard block once and reuse it.
+277,21,multiple_choice,exam,,An Input Set saves pipeline:,Audit logs|Input values|Source code,1,,,It lets you rerun a pipeline with the same inputs.
+278,22,multiple_choice,exam,,An expression references a:,Fixed price|Developer name|Runtime value,2,,,It pulls in a value that changes when the pipeline runs.
+279,23,multiple_choice,exam,,A trigger can start a pipeline:,Automatically|Manually only|Never,0,,,It listens for an event or schedule.
+280,24,multiple_choice,exam,,Harness governance is built on Open:,Banking|Policy Agent|Source,1,,,Rules are written as policy as code.
+281,25,multiple_choice,exam,,Feature Flags separate code release from:,Team growth|Bug reports|Feature release,2,,,Code can ship without turning the feature on.
+282,26,multiple_choice,exam,,STO orchestrates security:,Scanners|Budgets|Calendars,0,,,It coordinates security tools inside pipelines.
+283,27,multiple_choice,exam,,Chaos Engineering injects failures:,Never|On purpose|By accident,1,,,It tests how well a system copes.
+284,28,multiple_choice,exam,,CCM keeps track of cloud:,Uptime|Latency|Spend,2,,,It helps monitor and optimize cloud costs.
+285,29,multiple_choice,exam,,An IDP offers developers a self-service:,Catalog|Invoice|Holiday,0,,,It is an Internal Developer Portal.
+286,30,multiple_choice,exam,,SEI mainly surfaces engineering:,Rumours|Metrics|Opinions,1,,,It reports technical performance insights.
+287,31,multiple_choice,exam,,Harness Open Source is free and:,Vendor-managed|Closed|Self-hosted,2,,,The core functionality is available at no cost.
+288,32,multiple_choice,exam,,"Resources sit under Account, Org, then:",Project|Pipeline|Delegate,0,,,A project always sits within an organization.
+289,32,true_false,exam,,A project can exist outside any organization.,,false,,,A project always sits within an organization.
+290,33,multiple_choice,exam,,Pipeline notifications can go to:,Printers|Satellites|Slack,2,,,Email and other common tools work too.
+291,34,multiple_choice,exam,,Hardcoding secrets in YAML is a:,Bad practice|Best practice|Requirement,0,,,The secret stays visible in version history.
+292,34,true_false,exam,,Pipeline files should contain secret values directly.,,false,,,Reference secrets by name; embedded values stay visible to readers.
