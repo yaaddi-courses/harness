@@ -1,0 +1,37 @@
+section,deck,pack,level,keywords,terms,kind,main_card_id
+Foundations,What Harness Is and the Problem It Solves,Harness is mainly a unified:,1,CI/CD,CI/CD,teach,1
+Foundations,Harness Modules Overview,Harness organizes functionality into:,1,modules|pipeline|Feature Flags,modules|pipeline|Feature Flags,teach,8
+Core Building Blocks,Pipelines: The Core Building Block,A Harness pipeline represents a:,1,A Harness pipeline represents a:,,teach,15
+Core Building Blocks,Stages and Steps,A stage is made up of:,1,stage|step,stage|step,teach,22
+Core Building Blocks,Delegates: How Harness Talks to Your Infrastructure,The Delegate runs inside:,1,Delegate|connector|Environment|Kubernetes,Delegate|connector|Environment|Kubernetes,teach,29
+Core Building Blocks,Delegates: How Harness Talks to Your Infrastructure,SaaS stands for what?,1,Service|SaaS,Service|SaaS,teach,240
+Core Building Blocks,Delegate Selectors,Delegate selectors route tasks by:,1,selector,selector,teach,36
+Core Building Blocks,Connectors: Integrating Third-Party Tools,A GitHub connector stores:,1,secrets,secrets,teach,43
+Core Building Blocks,Secrets Management,"Secrets should be referenced, never:",1,HashiCorp Vault,HashiCorp Vault,teach,50
+Continuous Integration,Harness CI: Build Pipeline Basics,A basic CI pipeline builds an:,2,artifact|registry,artifact|registry,teach,57
+Continuous Integration,Build Infrastructure: Cloud Build vs. Self-Hosted,Harness CI Cloud runs builds on:,2,Harness CI Cloud,Harness CI Cloud,teach,64
+Continuous Integration,Codebase and Trigger Configuration,A trigger decides:,2,trigger|cron trigger,trigger|cron trigger,teach,71
+Continuous Integration,Test Intelligence,Test Intelligence speeds up builds by:,2,Test Intelligence,Test Intelligence,teach,78
+Continuous Integration,Cache Intelligence,Cache Intelligence speeds up builds by:,2,Cache Intelligence,Cache Intelligence,teach,85
+Continuous Delivery,"Harness CD: Services, Environments, Infrastructure Definitions",A Service in Harness CD defines the:,2,Infrastructure Definition|cluster,Infrastructure Definition|cluster,teach,92
+Continuous Delivery,"Deployment Strategies: Rolling, Canary, Blue-Green",Testing a new version on some traffic is:,2,canary|rolling|blue-green,canary|rolling|blue-green,teach,99
+Continuous Delivery,GitOps in Harness,"In GitOps, the source of truth is:",2,GitOps,GitOps,teach,106
+Continuous Delivery,Approval Steps and Manual Gates,An approval pauses a pipeline for a:,2,approval,approval,teach,113
+Continuous Delivery,Rollback Mechanics,A rollback reverts to the:,3,rollback|health check,rollback|health check,teach,120
+Continuous Delivery,Continuous Verification During Deploys,Continuous Verification watches metrics during a:,3,Continuous Verification,Continuous Verification,teach,127
+Reuse & Automation,Templates: Reusing Pipeline Logic,A template's main purpose is:,3,template|YAML,template|YAML,teach,134
+Reuse & Automation,Input Sets and Overlays,An Input Set saves a bundle of:,3,Input Set|overlay,Input Set|overlay,teach,141
+Reuse & Automation,Variables and Expressions,A Harness expression references a:,3,expression|variables,expression|variables,teach,148
+Reuse & Automation,Triggers: Automating Pipeline Runs,A trigger starts a pipeline:,3,webhook,webhook,teach,155
+Governance,Policy as Code (OPA Governance),Harness governance is built on:,3,governance|OPA|Policy as Code,governance|OPA|Policy as Code,teach,162
+Other Modules,Feature Flags Module,Feature Flags decouple releasing code from:,3,Feature Flags decouple releasing code from:,,teach,169
+Other Modules,Security Testing Orchestration (STO),STO (Security Testing Orchestration) orchestrates security:,3,STO (Security Testing Orchestration) orchestrates security:,,teach,176
+Other Modules,Chaos Engineering Module,Chaos Engineering deliberately introduces:,4,Chaos Engineering|pod,Chaos Engineering|pod,teach,183
+Other Modules,Cloud Cost Management (CCM),CCM (Cloud Cost Management) mainly helps you manage:,4,CCM (Cloud Cost Management) mainly helps you manage:,,teach,190
+Other Modules,Internal Developer Portal (IDP),An IDP (Internal Developer Portal) mainly offers developers:,4,golden path,golden path,teach,197
+Other Modules,Software Engineering Insights (SEI),SEI (Software Engineering Insights) mainly surfaces:,4,DORA metrics|cycle time,DORA metrics|cycle time,teach,204
+Organization & Best Practices,Harness Open Source vs. Harness Platform,Harness Open Source is:,4,Harness Open Source,Harness Open Source,teach,211
+Organization & Best Practices,"Projects, Organizations, and RBAC","Harness scopes resources under Account, Org, then:",4,RBAC,RBAC,teach,218
+Organization & Best Practices,Pipeline Notifications and Observability,Pipeline notifications can go to:,4,execution view,execution view,teach,225
+Organization & Best Practices,Common Harness Anti-Patterns and Best Practices,Hardcoding a secret in pipeline YAML is a:,4,Hardcoding a secret in pipeline YAML is a:,,teach,232
+Review,Recap: Key Terms,Recap pack 36,4,selector|HashiCorp Vault|Harness CI Cloud|cron trigger|Test Intelligence|Cache Intelligence|Infrastructure Definition|canary|rolling|GitOps|health check|Continuous Verification|Input Set|overlay|expression|webhook|governance|OPA|Policy as Code|Chaos Engineering|pod|golden path|DORA metrics|cycle time|Harness Open Source|RBAC|execution view|SaaS,,review,244
